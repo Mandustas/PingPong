@@ -11,7 +11,6 @@
             {
                 waitHandler.WaitOne();
                 Console.WriteLine(" Ping");
-                Thread.Sleep(500);
                 waitHandler.Set();
             }
         }
@@ -23,8 +22,7 @@
             {
                 waitHandler.WaitOne();
                 Console.WriteLine("Pong");
-                Thread.Sleep(500);
-                waitHandler.Set();
+                waitHandler.Set(); 
             }
         }
 

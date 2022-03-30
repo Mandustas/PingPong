@@ -11,7 +11,6 @@
             {
                 mutex.WaitOne();
                 Console.WriteLine(" Ping");
-                Thread.Sleep(500);
                 mutex.ReleaseMutex();
             }
         }
@@ -23,14 +22,13 @@
             {
                 mutex.WaitOne();
                 Console.WriteLine("Pong");
-                Thread.Sleep(500);
                 mutex.ReleaseMutex();
             }
         }
 
         public static void PingPong()
         {
-            Task.Run(Ping).Wait(1);
+            Task.Run(Ping);
             Task.Run(Pong);
         }
     }

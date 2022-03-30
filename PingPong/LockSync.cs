@@ -11,7 +11,6 @@
                 {
                     {
                         Console.WriteLine(" Ping");
-                        Thread.Sleep(500);
                     }
                 }
         }
@@ -23,14 +22,13 @@
                 {
                     {
                         Console.WriteLine("Pong");
-                        Thread.Sleep(500);
                     }
                 }
         }
 
         public static void PingPong()
         {
-            Task.Run(Ping).Wait(1);
+            Task.Run(Ping);
             Task.Run(Pong);
         }
     }
